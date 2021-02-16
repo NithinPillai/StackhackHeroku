@@ -1,22 +1,17 @@
 const nodemailer = require('nodemailer');
 const express = require('express');
 const bodyParser = require('body-parser');
-
-
 const log = console.log;
 const app = express();
-app.use(express.json);
-
-
 require("dotenv").config();
 app.use(express.static('website'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.json());
 // app.listen(PORT, () => log(`Server is starting on PORT ${PORT}`));
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
+    console.log(`Server running on ${ PORT }`);
 });
 
 const transporter = nodemailer.createTransport({
@@ -68,8 +63,7 @@ app.post('/email', (req, res) => {
 
 
 
-app.post('/contactUsEmail', (req, res) => {
-
+app.post('/contactEmail', (req, res) => {
     const transporterC = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -78,14 +72,15 @@ app.post('/contactUsEmail', (req, res) => {
         }
     });
 
-    let mail = {
-        from: req.body.to_address,
-        to: process.env.EMAIL,
-        subject: `Message from ${req.body.email}: ${req.body.subject}`,
-        body: req.body.message
-    };
 
-    transporterC.sendMail(mail, function(error, info) {
+    const mailDats = {
+        from: req.body.emailC,
+        to: process.env.EMAIL,
+        subject: `Message from ${req.body.emailC}: ${req.body.subjectC}`,
+        text: req.body.messageC
+    }
+
+    transporterC.sendMail(mailDats, function(error, info) {
         if (error) {
             console.log(error);
         } else {
@@ -93,7 +88,4 @@ app.post('/contactUsEmail', (req, res) => {
         }
     });
     res.redirect('/');
-    //Send an email here but currently dummy email
-    // console.log('Data:', req.body);
-    // res.json({ message: 'Message received!' })
 });
