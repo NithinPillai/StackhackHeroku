@@ -7,16 +7,17 @@ const log = console.log;
 const app = express();
 app.use(express.json);
 
-const PORT = 5000;
+
 require("dotenv").config();
 app.use(express.static('website'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // app.listen(PORT, () => log(`Server is starting on PORT ${PORT}`));
-app.listen(PORT || 8080, () => {
-    console.log(`Server running on ${PORT}`);
-})
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',
