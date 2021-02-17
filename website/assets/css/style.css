@@ -1071,19 +1071,6 @@ section {
     text-decoration: none;
 }
 
-@media screen and (max-width: 1007px) {
-    .servicesRowForCourses {
-        display: grid;
-        grid-gap: 1em;
-        grid-template-areas: "javaB" "python" "scratch" "javaI" " webDev" "chromeX" "vue" "c" "node" "boot" "react" "flutter";
-    }
-    .servicesRowForLectures {
-        display: grid;
-        grid-gap: 1em;
-        grid-template-areas: "compBasics" "algo";
-    }
-}
-
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -1500,9 +1487,38 @@ section {
 
 .profileCardHolder {
     border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-template-areas: "nithin alex anish";
+}
+
+#nithin {
+    grid-area: nithin;
+}
+
+#alex {
+    grid-area: alex;
+}
+
+#anish {
+    grid-area: anish;
+}
+
+@media screen and (max-width: 1007px) {
+    .profileCardHolder {
+        border-radius: 10px;
+        display: grid;
+        grid-template-areas: "nithin" "alex" "anish";
+        grid-gap: 10px;
+    }
+    #nithin {
+        grid-area: nithin;
+    }
+    #alex {
+        grid-area: alex;
+    }
+    #anish {
+        grid-area: anish;
+    }
 }
 
 
