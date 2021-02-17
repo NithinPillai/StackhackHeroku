@@ -1508,7 +1508,7 @@ section {
         border-radius: 10px;
         display: grid;
         grid-template-areas: "nithin" "alex" "anish";
-        grid-gap: 10px;
+        grid-gap: 30px;
     }
     #nithin {
         grid-area: nithin;
