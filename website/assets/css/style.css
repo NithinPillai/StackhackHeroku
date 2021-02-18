@@ -1519,6 +1519,58 @@ section {
     #anish {
         grid-area: anish;
     }
+    .servicesRowForLectures {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-areas: "compBasics" "algo";
+    }
+    #compB {
+        grid-area: compBasics;
+    }
+    #algo {
+        grid-area: algo;
+    }
+    .servicesRowForCourses {
+        display: grid;
+        grid-gap: 1em;
+        grid-template-areas: "javaB" "python" "scratch" "javaI" "webDev" "chromeX" "vue" "c" "node" "boot" "react" "flutter";
+    }
+    #javaB {
+        grid-area: javaB;
+    }
+    #javaI {
+        grid-area: javaI;
+    }
+    #python {
+        grid-area: python;
+    }
+    #webDev {
+        grid-area: webDev;
+    }
+    #chromeX {
+        grid-area: chromeX;
+    }
+    #scratch {
+        grid-area: scratch;
+    }
+    #vue {
+        grid-area: vue;
+    }
+    #c {
+        grid-area: c;
+    }
+    #nodejs {
+        grid-area: node;
+    }
+    #bootstrap {
+        grid-area: boot;
+    }
+    #react {
+        grid-area: react;
+    }
+    #flutter {
+        grid-area: flutter;
+    }
 }
 
 
