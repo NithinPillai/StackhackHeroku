@@ -990,7 +990,7 @@ section {
 .servicesRowForCourses {
     display: grid;
     grid-gap: 1em;
-    grid-template-areas: "javaB python" "scratch javaI" " webDev chromeX" "vue c" "node boot" "react flutter";
+    grid-template-areas: "javaB python" "node javaI" " webDev chromeX" "vue c" "scratch boot" "react flutter";
 }
 
 #javaB {
